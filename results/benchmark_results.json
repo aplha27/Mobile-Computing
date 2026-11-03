@@ -1,0 +1,250 @@
+{
+  "task1_activity_identification": {
+    "task": "Task 1: Activity Identification",
+    "accuracy": 0.6498,
+    "macro_f1": 0.4286,
+    "weighted_f1": 0.6558,
+    "total_test_windows": 55004,
+    "confusion_matrix": [
+      [
+        13951,
+        2493,
+        458,
+        63,
+        186,
+        13,
+        27
+      ],
+      [
+        3983,
+        16164,
+        3094,
+        249,
+        1650,
+        77,
+        256
+      ],
+      [
+        862,
+        1854,
+        2152,
+        67,
+        983,
+        44,
+        217
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        305,
+        915,
+        879,
+        43,
+        3166,
+        51,
+        332
+      ],
+      [
+        0,
+        3,
+        10,
+        1,
+        44,
+        58,
+        7
+      ],
+      [
+        2,
+        9,
+        15,
+        4,
+        64,
+        0,
+        253
+      ]
+    ],
+    "per_class": {
+      "lying_down": {
+        "display_name": "Lying down",
+        "precision": 0.7303,
+        "recall": 0.8115,
+        "f1_score": 0.7688,
+        "support": 17191
+      },
+      "sitting": {
+        "display_name": "Sitting",
+        "precision": 0.754,
+        "recall": 0.6346,
+        "f1_score": 0.6891,
+        "support": 25473
+      },
+      "standing_in_place": {
+        "display_name": "Standing in place",
+        "precision": 0.3257,
+        "recall": 0.3483,
+        "f1_score": 0.3366,
+        "support": 6179
+      },
+      "standing_and_moving": {
+        "display_name": "Standing and moving",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "walking": {
+        "display_name": "Walking",
+        "precision": 0.5196,
+        "recall": 0.5563,
+        "f1_score": 0.5373,
+        "support": 5691
+      },
+      "running": {
+        "display_name": "Running",
+        "precision": 0.2387,
+        "recall": 0.4715,
+        "f1_score": 0.3169,
+        "support": 123
+      },
+      "bicycling": {
+        "display_name": "Bicycling",
+        "precision": 0.2317,
+        "recall": 0.7291,
+        "f1_score": 0.3516,
+        "support": 347
+      }
+    }
+  },
+  "task2_quantitative_reasoning": {
+    "task": "Task 2: Temporal & Quantitative Reasoning",
+    "duration_mae_seconds": 566.75,
+    "duration_mape_percent": 61.08,
+    "duration_accuracy_within_30s": 7.02,
+    "duration_accuracy_within_60s": 15.79,
+    "count_exact_accuracy": 31.58,
+    "comparison_accuracy": 33.33,
+    "total_queries_evaluated": 126
+  },
+  "task3_evidence_grounding": {
+    "task": "Task 3: Evidence Grounding",
+    "mean_temporal_iou": 0.1812,
+    "modality_grounding_precision": 100.0,
+    "channel_grounding_precision": 100.0,
+    "total_grounding_samples": 56
+  },
+  "task4_open_world_reasoning": {
+    "task": "Task 4: Open-World Reasoning & Safety",
+    "semantic_reasoning_accuracy": 100.0,
+    "truthful_rejection_rate": 100.0,
+    "open_world_test_results": [
+      {
+        "question": "Was the user using a wheeled or pedal-based mode of movement?",
+        "operation": "open_world_reasoning",
+        "is_supported": true,
+        "answer": "Yes (Bicycling)",
+        "confidence": 0.4464579001537987
+      },
+      {
+        "question": "Was the user engaged in sedentary behavior?",
+        "operation": "open_world_reasoning",
+        "is_supported": true,
+        "answer": "Yes (Sitting, Lying down)",
+        "confidence": 0.4383906217026886
+      },
+      {
+        "question": "Did the user perform vigorous exercise?",
+        "operation": "open_world_reasoning",
+        "is_supported": true,
+        "answer": "Yes (Running, Bicycling)",
+        "confidence": 0.45854956923609713
+      },
+      {
+        "question": "Was the user engaged in foot locomotion?",
+        "operation": "open_world_reasoning",
+        "is_supported": true,
+        "answer": "Yes (Walking, Running)",
+        "confidence": 0.4414524445106087
+      },
+      {
+        "question": "How many times did the user transition from sitting to walking?",
+        "operation": "transition",
+        "is_supported": true,
+        "answer": "16 times",
+        "confidence": 0.95
+      },
+      {
+        "question": "Did the user spend more time walking or sitting in the first 30 minutes?",
+        "operation": "comparison",
+        "is_supported": true,
+        "answer": "Sitting (by 389 seconds)",
+        "confidence": 0.45688102171695594
+      },
+      {
+        "question": "What food did the user eat for lunch?",
+        "operation": "unsupported",
+        "is_supported": false,
+        "answer": "Unable to answer with available sensor modalities.",
+        "confidence": 0.0
+      },
+      {
+        "question": "What was the user's heart rate and blood pressure?",
+        "operation": "unsupported",
+        "is_supported": false,
+        "answer": "Unable to answer with available sensor modalities.",
+        "confidence": 0.0
+      },
+      {
+        "question": "What city and building address was the user at?",
+        "operation": "unsupported",
+        "is_supported": false,
+        "answer": "Unable to answer with available sensor modalities.",
+        "confidence": 0.0
+      },
+      {
+        "question": "Who was talking to the user during the recording?",
+        "operation": "unsupported",
+        "is_supported": false,
+        "answer": "Unable to answer with available sensor modalities.",
+        "confidence": 0.0
+      },
+      {
+        "question": "What app was open on the user's phone screen?",
+        "operation": "unsupported",
+        "is_supported": false,
+        "answer": "Unable to answer with available sensor modalities.",
+        "confidence": 0.0
+      }
+    ]
+  },
+  "edge_deployment_profiling": {
+    "model_a_full_precision": {
+      "name": "Model A (Full Precision FP32)",
+      "parameters": 192520,
+      "model_size_mb": 0.7344,
+      "cpu_latency_ms": 0.698,
+      "throughput_windows_per_sec": 1433.4,
+      "memory_footprint_mb": 3.04
+    },
+    "model_b_quantized_edge": {
+      "name": "Model B (Quantized INT8 / Edge)",
+      "parameters": 192520,
+      "model_size_mb": 0.2056,
+      "cpu_latency_ms": 1.12,
+      "throughput_windows_per_sec": 892.8,
+      "memory_footprint_mb": 0.87,
+      "compression_ratio": "3.6x"
+    },
+    "ensemble_tree_edge": {
+      "name": "Gradient Boosted Tree Ensemble",
+      "cpu_latency_ms": 6.646,
+      "throughput_windows_per_sec": 150.5
+    }
+  }
+}

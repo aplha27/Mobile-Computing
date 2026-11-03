@@ -1,0 +1,89 @@
+{
+  "dataset": "PAMAP2 Protocol",
+  "evaluation": "leave-one-subject-out; pooled out-of-fold predictions",
+  "subjects": [
+    "subject101",
+    "subject102",
+    "subject103",
+    "subject104",
+    "subject105",
+    "subject106",
+    "subject107",
+    "subject108"
+  ],
+  "subject_count": 8,
+  "window_seconds": 5.0,
+  "window_hop_seconds": 2.5,
+  "sample_rate_hz": 100.0,
+  "sensor_location": "chest IMU",
+  "sensor_channels": [
+    "Acc X",
+    "Acc Y",
+    "Acc Z",
+    "Gyro X",
+    "Gyro Y",
+    "Gyro Z"
+  ],
+  "activities": {
+    "lying_down": "lying",
+    "sitting": "sitting",
+    "standing_in_place": "standing",
+    "walking": "walking",
+    "running": "running",
+    "bicycling": "cycling"
+  },
+  "class_distribution": {
+    "lying_down": 718,
+    "sitting": 690,
+    "standing_in_place": 625,
+    "walking": 470,
+    "running": 218,
+    "bicycling": 567
+  },
+  "windows": 3288,
+  "pooled_accuracy": 0.8366788321167883,
+  "pooled_macro_f1": 0.8452689702693248,
+  "per_subject": {
+    "subject101": {
+      "windows": 433,
+      "accuracy": 0.7182448036951501,
+      "macro_f1": 0.7101702145986438
+    },
+    "subject102": {
+      "windows": 487,
+      "accuracy": 0.43737166324435317,
+      "macro_f1": 0.43530614827332537
+    },
+    "subject103": {
+      "windows": 301,
+      "accuracy": 0.9302325581395349,
+      "macro_f1": 0.6192968321046701
+    },
+    "subject104": {
+      "windows": 423,
+      "accuracy": 0.8676122931442081,
+      "macro_f1": 0.7352001859753798
+    },
+    "subject105": {
+      "windows": 483,
+      "accuracy": 0.9233954451345756,
+      "macro_f1": 0.9206918418093615
+    },
+    "subject106": {
+      "windows": 422,
+      "accuracy": 0.9786729857819905,
+      "macro_f1": 0.9716198461915352
+    },
+    "subject107": {
+      "windows": 390,
+      "accuracy": 0.9794871794871794,
+      "macro_f1": 0.979353195823784
+    },
+    "subject108": {
+      "windows": 349,
+      "accuracy": 0.9713467048710601,
+      "macro_f1": 0.9566535039736016
+    }
+  },
+  "excluded_subject": "subject109 (protocol file contains only activity 24: rope jumping)"
+}

@@ -1,0 +1,13 @@
+{
+  "validation_macro_f1": 0.407812774410037,
+  "test_macro_f1": 0.5169910405122483,
+  "test_weighted_f1": 0.667323655088044,
+  "test_accuracy": 0.6559159333866628,
+  "test_users": 12,
+  "test_rows": 55004,
+  "test_context_observation_fraction": 0.5259999272780161,
+  "test_place_observation_fraction": 0.5184713838993528,
+  "activity_only_test_macro_f1": 0.4289704140984556,
+  "activity_only_test_accuracy": 0.6484437495454876,
+  "test_macro_f1_delta": 0.08802062641379271
+}

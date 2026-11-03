@@ -1,0 +1,61 @@
+{
+  "dataset": "University of Sussex-Huawei Locomotion (SHL) Dataset preview",
+  "evaluation": "leave-one-participant-out; pooled out-of-fold predictions",
+  "subjects": [
+    "User1",
+    "User2",
+    "User3"
+  ],
+  "subject_count": 3,
+  "window_seconds": 5.0,
+  "window_hop_seconds": 2.5,
+  "timeline_bin_seconds": 2.5,
+  "sample_rate_hz": 100.0,
+  "sensor_location": "hand",
+  "sensor_channels": [
+    "Acc X",
+    "Acc Y",
+    "Acc Z",
+    "Gyro X",
+    "Gyro Y",
+    "Gyro Z"
+  ],
+  "activities": {
+    "walking": "walking",
+    "running": "running",
+    "bicycling": "bicycling"
+  },
+  "class_distribution": {
+    "walking": 13536,
+    "running": 1632,
+    "bicycling": 6772
+  },
+  "windows": 21940,
+  "pooled_accuracy": 0.7661349134001824,
+  "pooled_macro_f1": 0.6976434300910422,
+  "per_subject": {
+    "User1": {
+      "windows": 5688,
+      "accuracy": 0.8166315049226441,
+      "macro_f1": 0.7974380686175729
+    },
+    "User2": {
+      "windows": 9486,
+      "accuracy": 0.734134514020662,
+      "macro_f1": 0.45772442687665826
+    },
+    "User3": {
+      "windows": 6766,
+      "accuracy": 0.7685486254803429,
+      "macro_f1": 0.6389965051510854
+    }
+  },
+  "excluded_labels": {
+    "0": "unlabeled",
+    "1": "still",
+    "5": "car",
+    "6": "bus",
+    "7": "train",
+    "8": "subway"
+  }
+}

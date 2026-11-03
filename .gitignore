@@ -1,0 +1,67 @@
+# ==============================================================================
+# SensorQA .gitignore
+# Excludes virtual environments, compiled caches, large binary datasets,
+# temporary credentials, and local runtime logs.
+# ==============================================================================
+
+# Virtual Environment & Python execution
+.venv/
+env/
+venv/
+ENV/
+bin/
+lib/
+include/
+Scripts/
+pyvenv.cfg
+.lock
+CACHEDIR.TAG
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions & build artifacts
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Microsoft Office lock / temporary files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Large Multi-Gigabyte Dataset Archives (Should NOT be pushed to Git)
+*.zip
+*.tar
+*.tar.gz
+*.7z
+# Note: Keep datasets local; download scripts / instructions documented in README
+
+# Keep model checkpoints and lightweight JSON evaluation metrics
+!checkpoints/
+!results/
+# Exclude raw oversized session prediction dumps if generated
+results/shl_session_predictions.pkl
+
+# Environment variables & API credentials (NEVER commit secrets!)
+.env
+.env.*
+*.key
+*.token
+*.pem
+
+# Local scratch testing outputs & log dumps
+*.log
+scratch/
+!tests/
+!tests/**
