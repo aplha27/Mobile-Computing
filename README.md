@@ -22,19 +22,6 @@ Traditional multimodal systems either pass high-frequency sensor tokens directly
 
 ---
 
-## 👥 Equal Team Workload Distribution (4 Members — 25% Each)
-
-The project was executed collaboratively by a four-member engineering team with equal work distribution:
-
-| Team Member / Role | Functional Domain | Primary Responsibilities & Deliverables | Code Attribution | Effort |
-|:---|:---|:---|:---|:---:|
-| **Member 1**<br>*(Perception Lead)* | **Sensor Modeling & Edge Compression** | • Trained PyTorch `SensorEncoderNN` with temperature scaling $T$<br>• Tabular `HistGradientBoosting` ensemble for 7 ExtraSensory classes<br>• PAMAP2 chest-IMU 100 Hz windowing and leave-one-subject-out cross-validation<br>• PyTorch dynamic INT8 quantization achieving **3.6× compression (41 KB)** | `src/sensor_model.py`<br>`src/pamap2_model.py`<br>`src/train_pamap2_model.py` | **25%** |
-| **Member 2**<br>*(Context Lead)* | **Data Ingestion, Context & Places** | • Built `ExtraSensoryLoader` across 60 subjects with official 5-fold CV<br>• Integrated `StudentLifeLoader` (49 users) with GPS, Wi-Fi location & EMA surveys<br>• Streaming parser for SHL raw Hand-placement motion files<br>• Built `ContextTimeline` & `LocationTimeline` tracking observation coverage | `src/dataset_loader.py`<br>`src/studentlife_loader.py`<br>`src/shl_model.py`<br>`src/context_store.py` | **25%** |
-| **Member 3**<br>*(Reasoning Lead)* | **Query Planning, Math & Safety** | • Rule-based `QueryPlanner` mapping questions to structured JSON<br>• Pure-Python `DeterministicEngine` for duration sums, counts & comparisons<br>• Temporal interval intersection for Activity $\cap$ Context/Location co-occurrence<br>• DrHouse truthful rejection (**100% rejection rate** for food, heart rate, GPS) | `src/query_planner.py`<br>`src/deterministic_engine.py` | **25%** |
-| **Member 4**<br>*(Full-Stack Lead)* | **Web Services, UI & Evaluation** | • FastAPI backend, REST endpoints, and multi-session routing<br>• Interactive front-end (real-time chat, Chart.js waveforms, timeline viewer)<br>• Automated 4-Task benchmark evaluation suite and edge hardware profiling<br>• Answer generator with 7-field schema & optional NVIDIA NIM client | `src/web_app.py`<br>`src/answer_generator.py`<br>`src/evaluator.py`<br>`src/templates/`<br>`src/static/` | **25%** |
-
----
-
 ## 🏗️ System Architecture
 
 ```text
@@ -168,7 +155,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 # Install dependencies
-pip install fastapi uvicorn jinja2 numpy pandas scikit-learn torch python-pptx
+pip install fastapi uvicorn jinja2 numpy pandas scikit-learn torch
 ```
 
 ### 2. Run Test Suite
@@ -213,9 +200,6 @@ Mobile-Computing/
 │   └── test_all_modules.py        # Complete unit & regression test suite
 ├── checkpoints/                   # Trained model weights & quantized checkpoints
 ├── results/                       # Empirical benchmark metrics (JSON)
-├── generate_presentation.py       # Automated PowerPoint generation script
-├── generate_word_report.py        # Automated Word report generation script
-├── SensorQA_Presentation.pptx     # 29-Slide PowerPoint deck
 ├── SensorQA_Challenge_1_Comprehensive_Project_Report.docx # Comprehensive project report
 ├── start_sensorqa.ps1             # Windows startup script with secure key handling
 ├── .gitignore                     # Git tracking rules
